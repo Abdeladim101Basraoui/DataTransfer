@@ -40,24 +40,36 @@ namespace DataTransfer
 
         private void Starting_Connection()
         {
+            server.Start();
             //this.Invoke((MethodInvoker));
-            server.Events.ClientConnected += delegate (object send, ClientConnectedEventArgs ee)
+            server.Events.ClientConnected += delegate (object send, ClientConnectedEventArgs ee) 
             {
-                statusStrip1.Items[0].Text = $"{full_ipAdresse} Disconnected ....";
-                txt_Msgs.Text = $"{full_ipAdresse} Disconnected.....";
-                cbx_Host.Items.Add(ee.IpPort);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    statusStrip1.Items[0].Text = $"{full_ipAdresse} connected ....";
+                    txt_Msgs.Text = $"{full_ipAdresse} connected.....";
+                    cbx_Host.Items.Add(ee.IpPort);
+
+
+                });
             };
             server.Events.ClientDisconnected += delegate (object send, ClientDisconnectedEventArgs ee)
             {
-                statusStrip1.Items[0].Text = $"{full_ipAdresse} Disconnected";
-                txt_Msgs.Text = $"{full_ipAdresse} Disconnected";
-                cbx_Host.Items.Remove(ee.IpPort);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    statusStrip1.Items[0].Text = $"{full_ipAdresse} Disconnected";
+                    txt_Msgs.Text = $"{full_ipAdresse} Disconnected";
+                    cbx_Host.Items.Remove(ee.IpPort);
+                });
 
             };
             server.Events.DataReceived += delegate (object sernd, DataReceivedEventArgs ee)
-            { 
-                statusStrip1.Items[0].Text = $"{full_ipAdresse} : is Tiping .....";
-              txt_Msgs.Text = $"{full_ipAdresse} : {Encoding.UTF8.GetString(ee.Data)} {Environment.NewLine}";
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    statusStrip1.Items[0].Text = $"{full_ipAdresse} : is Tiping .....";
+                    txt_Msgs.Text = $"{full_ipAdresse} : {Encoding.UTF8.GetString(ee.Data)} {Environment.NewLine}";
+                });
             };
         }
         private void Remplir_Combo()
@@ -70,6 +82,7 @@ namespace DataTransfer
 
         private void metroTextBox1_Click(object sender, EventArgs e)
         {
+            if(server.IsConnected(full_ipAdresse))
             server.Start();
             statusStrip1.Items[1].Text = "Starting ....";
             statusStrip1.Items[1].ForeColor = Color.Green;
@@ -80,8 +93,8 @@ namespace DataTransfer
         {
             if(!string.IsNullOrEmpty(txt_Message.Text) && cbx_Host.SelectedItem!=null )
             {
-                server.Send(cbx_Host.SelectedItem.ToString(), txt_Message.Text);
-                txt_Msgs.Text += $"Server : {txt_Message.Text}{Environment.NewLine}";
+                server.Send(full_ipAdresse, txt_Message.Text);
+                txt_Msgs.Text += $"Server : {txt_Message.Text}\r\n";
                 txt_Message.Text = "";
             }
         }

@@ -41,6 +41,7 @@ namespace DataTransfer
             this.taping_lbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.txt_Message = new MetroFramework.Controls.MetroTextBox();
             this.btn_Send = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +185,7 @@ namespace DataTransfer
             this.txt_Message.TabIndex = 8;
             this.txt_Message.UseSelectable = true;
             this.txt_Message.WaterMark = "Tiping ...";
-            this.txt_Message.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_Message.WaterMarkColor = System.Drawing.Color.Gray;
             this.txt_Message.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txt_Message.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
@@ -199,11 +200,27 @@ namespace DataTransfer
             this.btn_Send.UseSelectable = true;
             this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.metroLabel3.Location = new System.Drawing.Point(291, 59);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(205, 41);
+            this.metroLabel3.TabIndex = 10;
+            this.metroLabel3.Text = "Server";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel3.UseCustomBackColor = true;
+            this.metroLabel3.UseCustomForeColor = true;
+            this.metroLabel3.UseStyleColors = true;
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.txt_Message);
             this.Controls.Add(this.statusStrip1);
@@ -215,6 +232,7 @@ namespace DataTransfer
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Server";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -238,6 +256,7 @@ namespace DataTransfer
         private System.Windows.Forms.ToolStripStatusLabel taping_lbl;
         private MetroFramework.Controls.MetroTextBox txt_Message;
         private MetroFramework.Controls.MetroButton btn_Send;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
 
