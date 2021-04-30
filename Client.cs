@@ -20,18 +20,19 @@ namespace DataTransfer
         string full_AdresseIPv4;
         private void Client_Load(object sender, EventArgs e)
         {
-            this.Text = GetIPAddress();
+            this.Text  = $"The Machine IP Address: {GetIPAddress()[3].ToString()}";
             Remplir_Combo();
             full_AdresseIPv4 = $"{ cbx_Host.SelectedItem.ToString() }:{cbx_Port.SelectedItem.ToString()}";
             Starting_Connection();
         }
 
-        private string GetIPAddress()
+        public static IPAddress[] GetIPAddress()
         {
 
             IPHostEntry ipHostEntry = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress[] address = ipHostEntry.AddressList;
-            return $"The Machine IP Address: {address[3].ToString()}";
+            //IPAddress[] address = ipHostEntry.AddressList;
+            return ipHostEntry.AddressList;
+           // return $"The Machine IP Address: {address[3].ToString()}"; 
         }
         private void Remplir_Combo()
         {
@@ -105,11 +106,12 @@ namespace DataTransfer
         {
             if (btn_con.Text == "Disconnected")
             {
+                client.Disconnect();
                 btn_con.Text = "Re-Connected";
             }
             else
             {
-                metroButton1_Click(sender, e);
+                client.Connect();
             }
         }
 

@@ -120,7 +120,7 @@ namespace DataTransfer
             // 
             // 
             this.txt_Message.CustomButton.Image = null;
-            this.txt_Message.CustomButton.Location = new System.Drawing.Point(372, 1);
+            this.txt_Message.CustomButton.Location = new System.Drawing.Point(347, 1);
             this.txt_Message.CustomButton.Name = "";
             this.txt_Message.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txt_Message.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -139,7 +139,7 @@ namespace DataTransfer
             this.txt_Message.SelectionLength = 0;
             this.txt_Message.SelectionStart = 0;
             this.txt_Message.ShortcutsEnabled = true;
-            this.txt_Message.Size = new System.Drawing.Size(394, 23);
+            this.txt_Message.Size = new System.Drawing.Size(369, 23);
             this.txt_Message.TabIndex = 14;
             this.txt_Message.UseSelectable = true;
             this.txt_Message.WaterMark = "Tiping Here Your Message ....";
@@ -150,7 +150,7 @@ namespace DataTransfer
             // btn_send
             // 
             this.btn_send.Enabled = false;
-            this.btn_send.Location = new System.Drawing.Point(420, 358);
+            this.btn_send.Location = new System.Drawing.Point(395, 358);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(83, 23);
             this.btn_send.TabIndex = 15;
@@ -179,7 +179,7 @@ namespace DataTransfer
             this.btn_con.Name = "btn_con";
             this.btn_con.Size = new System.Drawing.Size(83, 23);
             this.btn_con.TabIndex = 15;
-            this.btn_con.Text = "Disconnect";
+            this.btn_con.Text = "Disconnected";
             this.btn_con.UseSelectable = true;
             this.btn_con.Click += new System.EventHandler(this.metroButton1_Click);
             // 
