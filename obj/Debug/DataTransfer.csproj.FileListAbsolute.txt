@@ -5,10 +5,13 @@ D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\bin\Debug\MetroFramewo
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\bin\Debug\MetroFramework.dll
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\bin\Debug\MetroFramework.Fonts.dll
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.csprojAssemblyReference.cache
-D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.Form1.resources
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.Properties.Resources.resources
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.csproj.GenerateResource.cache
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.csproj.CoreCompileInputs.cache
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.csproj.CopyComplete
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.exe
 D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.pdb
+D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\bin\Debug\SimpleTcp.dll
+D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\bin\Debug\SimpleTcp.xml
+D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.Client.resources
+D:\2020 - 2021\personnelle\TCP_IP Read&Write\DataTransfer\obj\Debug\DataTransfer.Server.resources
