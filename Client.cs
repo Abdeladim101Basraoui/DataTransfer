@@ -1,20 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using MetroFramework.Forms;
+using SimpleTcp;
 
 namespace DataTransfer
 {
-    public partial class Client :MetroFramework.Forms.MetroForm
+    public partial class Client :MetroForm
     {
         public Client()
         {
             InitializeComponent();
         }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+            cbx_Host.SelectedIndex = 0;
+            cbx_Port.SelectedIndex = 0;
+            //Starting_Connection();
+            GetIPAddress();
+        }
+
+        private string GetIPAddress()
+        {
+
+            IPHostEntry ipHostEntry = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress[] address = ipHostEntry.AddressList;
+            return $"The Local IP Address: {address[3].ToString()}";
+        }
+
+
     }
 }

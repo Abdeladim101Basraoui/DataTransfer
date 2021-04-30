@@ -29,8 +29,8 @@ namespace DataTransfer
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_Port = new System.Windows.Forms.ComboBox();
+            this.cbx_Host = new System.Windows.Forms.ComboBox();
             this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -40,23 +40,27 @@ namespace DataTransfer
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // cbx_Port
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(472, 77);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 21);
-            this.comboBox2.TabIndex = 11;
+            this.cbx_Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Port.FormattingEnabled = true;
+            this.cbx_Port.Items.AddRange(new object[] {
+            "9000"});
+            this.cbx_Port.Location = new System.Drawing.Point(472, 77);
+            this.cbx_Port.Name = "cbx_Port";
+            this.cbx_Port.Size = new System.Drawing.Size(104, 21);
+            this.cbx_Port.TabIndex = 11;
             // 
-            // comboBox1
+            // cbx_Host
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(218, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cbx_Host.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Host.FormattingEnabled = true;
+            this.cbx_Host.Items.AddRange(new object[] {
+            "127.0.0.1"});
+            this.cbx_Host.Location = new System.Drawing.Point(218, 79);
+            this.cbx_Host.Name = "cbx_Host";
+            this.cbx_Host.Size = new System.Drawing.Size(169, 21);
+            this.cbx_Host.TabIndex = 12;
             // 
             // metroCheckBox2
             // 
@@ -130,8 +134,8 @@ namespace DataTransfer
             this.ClientSize = new System.Drawing.Size(785, 401);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_Port);
+            this.Controls.Add(this.cbx_Host);
             this.Controls.Add(this.metroCheckBox2);
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.metroLabel2);
@@ -139,6 +143,7 @@ namespace DataTransfer
             this.Controls.Add(this.metroLabel1);
             this.Name = "Client";
             this.Text = "Client";
+            this.Load += new System.EventHandler(this.Client_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,8 +151,8 @@ namespace DataTransfer
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_Port;
+        private System.Windows.Forms.ComboBox cbx_Host;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;

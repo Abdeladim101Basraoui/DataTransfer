@@ -32,11 +32,13 @@ namespace DataTransfer
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbx_Host = new System.Windows.Forms.ComboBox();
+            this.cbx_Port = new System.Windows.Forms.ComboBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.Status_lbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -67,15 +69,6 @@ namespace DataTransfer
             this.metroCheckBox1.Text = "Add My IP";
             this.metroCheckBox1.UseSelectable = true;
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(679, 418);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "Disconnect";
-            this.metroButton1.UseSelectable = true;
-            // 
             // metroTextBox2
             // 
             // 
@@ -91,7 +84,7 @@ namespace DataTransfer
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(46, 168);
+            this.metroTextBox2.Location = new System.Drawing.Point(39, 132);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
@@ -117,39 +110,57 @@ namespace DataTransfer
             this.metroCheckBox2.Text = "Add My Port";
             this.metroCheckBox2.UseSelectable = true;
             // 
-            // comboBox1
+            // cbx_Host
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbx_Host.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Host.FormattingEnabled = true;
+            this.cbx_Host.Location = new System.Drawing.Point(235, 60);
+            this.cbx_Host.Name = "cbx_Host";
+            this.cbx_Host.Size = new System.Drawing.Size(169, 21);
+            this.cbx_Host.TabIndex = 6;
             // 
-            // comboBox2
+            // cbx_Port
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(489, 58);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbx_Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Port.FormattingEnabled = true;
+            this.cbx_Port.Location = new System.Drawing.Point(489, 58);
+            this.cbx_Port.Name = "cbx_Port";
+            this.cbx_Port.Size = new System.Drawing.Size(104, 21);
+            this.cbx_Port.TabIndex = 6;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Status_lbl});
+            this.statusStrip1.Location = new System.Drawing.Point(20, 408);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(730, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // Status_lbl
+            // 
+            this.Status_lbl.Name = "Status_lbl";
+            this.Status_lbl.Size = new System.Drawing.Size(118, 17);
+            this.Status_lbl.Text = "toolStripStatusLabel1";
             // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 450);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.cbx_Port);
+            this.Controls.Add(this.cbx_Host);
             this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroCheckBox2);
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Server";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,11 +171,12 @@ namespace DataTransfer
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbx_Host;
+        private System.Windows.Forms.ComboBox cbx_Port;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel Status_lbl;
     }
 }
 
